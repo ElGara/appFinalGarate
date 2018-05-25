@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<link href="jquery-mobile/jquery.mobile.theme-1.3.0.min.css" rel="stylesheet" type="text/css">
+<link href="jquery-mobile/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" type="text/css">
+<script src="jquery-mobile/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body  onload="onBodyLoad()">
+
+<!-- Pagina Home -->
+<div data-role="page" id="home">
+  <div data-role="header" style="background:#069A80">
+    <div class="ui-btn-left">
+        <a href="#nuevo" style="background:#08D7B4" data-role="button" data-inline="true" data-icon="plus" data-iconpos="notext">Nuevo Servicio</a>
+        <a href="#acercademi" data-role="button" data-inline="true" style="background:#08D7B4" data-icon="info" data-iconpos="notext">Acerca de mi</a>
+        </div>
+    <h1>Catálogo de <br> Servicios</h1>
+  </div>
+  
+  <div data-role="content">
+   <center><img src="img/icon_p.png" alt="" height="110px" width="100px"></center>
+   
+    <div data-role="collapsible-set">
+      <div data-role="collapsible">
+        <h3>Comida</h3>
+         <ul data-role="listview" data-filter="true" id="lista_Comida" data-inset="true" data-split-icon="edit" >
+            <li><a href="#">Página</a><a href="#">Predet.</a></li>
+      	 <li><a href="#">Ejmplo.</a><a href="#">Predet.</a></li>
+   	    </ul>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>Automoviles</h3>
+        <ul data-role="listview" data-filter="true" id="lista_Automoviles" data-inset="true" data-split-icon="edit" >
+            <li><a href="#">Página</a><a href="#">Predet.</a></li>
+      	 <li><a href="#">Ejmplo.</a><a href="#">Predet.</a></li>
+   	    </ul>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>Moda</h3>
+        <ul data-role="listview" data-filter="true" id="lista_Moda" data-inset="true" data-split-icon="edit" >
+            <li><a href="#">Página</a><a href="#">Predet.</a></li>
+      	 <li><a href="#">Ejmplo.</a><a href="#">Predet.</a></li>
+   	    </ul>
+      </div>
+    </div>
+   
+   
+  </div>
+  
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">      
+    	<ul>
+        	<li><a href="#" data-role="button" 		data-icon="arrow-l" style="background:#069A80">Atras</a></li>
+        
+            <li><a href="#info" data-rel="dialog" data-role="button" 	style="background:#069A80"	data-icon="info">Info</a></li>
+            
+            <li><a href="#" data-role="button" data-icon="arrow-r" style="background:#069A80">Siguiente</a></li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- Pagina Agregar Nuevo -->
+<div data-role="page" id="nuevo"   onloadstart="id_valor();">
+  <div data-role="header" style="background:#069A80">
+    <h1>Agregara Servicio</h1>    
+  </div>
+  
+  <div data-role="content">
+   <labe>ID:</labe>
+   <input type="text" id="nombre" placeholder="Nombre de Servico">
+   <label for="imagen">Selecciona Imagen:</label>
+   <input type="file" id="imagen">
+   <input type="text" id="telefono" placeholder="Telefono">
+   <input type="text" id="mail" placeholder="E-Mail">
+   <input type="text" id="domicilio" placeholder="Domicilio">
+   <label for="categoria">Selecciona Una Categoria:
+   </label>
+   <select id="categoria">
+       <option value="Comida">Comida</option>
+       <option value="Auto">Automotris</option>
+       <option value="Bellesa">Bellesa</option>
+   </select>
+   <label for="Nota">Escribe una nota:</label>
+   <textarea name="" id="Nota" cols="30" rows="10" placeholder="Nota...">
+       
+   </textarea>
+   <div id="alerta"></div>
+   <a href="#" data-role="button" class="azul" id="registro">Registrar</a>
+    <a href="#home" data-role="button" class="rojo"> Cancelar</a>
+  </div>
+  <script src="js/main.js"></script>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">      
+    	<ul>
+        	<li><a href="#" data-role="button" 	data-rel="back"	data-icon="arrow-l" style="background:#069A80">Atras</a></li>
+            
+            <li><a href="#home" data-role="button" 	style="background:#069A80"	data-icon="home">Inicio</a></li>
+            
+            <li><a href="#info" data-rel="dialog" data-role="button" 	style="background:#069A80"	data-icon="info">Info</a></li>
+            
+            <li><a href="#" data-role="button" data-icon="arrow-r" style="background:#069A80">Siguiente</a></li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- Pagina informacion de servicio-->
+<div data-role="page" id="infoSer" >
+  <div data-role="header" style="background:#069A80" data-position="fixed">
+    <h1>Informacion Servicio</h1>    
+  </div>
+  
+  <div data-role="content">
+  <img src="" alt="">
+   <h1 id="nomIServicio">Nombre</h1>
+   <center><img src="img/ejemplo.png" id="imgIServicio" class="imgInformacion" alt=""></center>
+
+    <br> <label for="telIServicio">Telefono:</label>
+      <h2 id="telIServicio">6691805050</h2>
+      <label for="mailIServico">E - Mail:</label>
+      <h2 id="mailIServico">ejemplo@mail.com</h2>
+      <label for="domiIServico">Domicilio:</label>
+      <h2 id="domiIServico">Av. Carmelo #123, Col. Mendoza</h2>
+ </div>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">      
+    	<ul>
+        	<li><a href="#" data-role="button" 	data-rel="back" 	data-icon="arrow-l" style="background:#069A80">Atras</a></li>
+            
+            <li><a href="#home" data-role="button" 	style="background:#069A80"	data-icon="home">Inicio</a></li>
+            
+            <li><a href="#info" data-rel="dialog" data-role="button" 	style="background:#069A80"	data-icon="info">Info</a></li>
+            
+            <li><a href="#" data-role="button" data-icon="arrow-r" style="background:#069A80">Siguiente</a></li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Pagina Edición del Servicio -->
+<div data-role="page" id="edicionServicio">
+  <div data-role="header" style="background:#069A80" data-position="fixed">
+    <h1>Editar Servicio</h1>    
+  </div>
+  
+  <div data-role="content">
+   <labe>ID:</labe>
+   <input type="text" id="auto" disabled>
+   <input type="text" id="Newnombre" placeholder="Nombre de Servico">
+   <label for="imagen">Selecciona Imagen:</label>
+   <input type="file" id="Newimagen">
+   <input type="text" id="Newtelefono" placeholder="Telefono">
+   <input type="text" id="Newmail" placeholder="E-Mail">
+   <input type="text" id="Newdomicilio" placeholder="Domicilio">
+   <label for="Newcategoria">Selecciona Una Categoria:
+   </label>
+   <select id="Newcategoria">
+       <option>Comida</option>
+       <option>Automotris</option>
+       <option>Bellesa</option>
+   </select>
+   <label for="NewNota">Escribe una nota:</label>
+   <textarea name="" id="NewNota" cols="30" rows="10" placeholder="Nota...">
+       
+   </textarea>
+   <a href="#" data-role="button" class="azul" id="registro">Actualizar</a>
+   <a href="#" data-role="button" class="rojo">Aliminar</a>
+    <a href="#home" data-role="button" class="verde"> Cancelar</a>
+  </div>
+  <script src="js/main.js"></script>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">      
+    	<ul>
+        	<li><a href="#" data-role="button" 	data-rel="back" 	data-icon="arrow-l" style="background:#069A80">Atras</a></li>
+            
+            <li><a href="#home" data-role="button" 	style="background:#069A80"	data-icon="home">Inicio</a></li>
+            
+            <li><a href="#info" data-rel="dialog" data-role="button" 	style="background:#069A80"	data-icon="info">Info</a></li>
+            
+            <li><a href="#" data-role="button" data-icon="arrow-r" style="background:#069A80">Siguiente</a></li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+
+<!--Pagina de acerca de mi -->
+<div data-role="page" id="acercademi">
+  <div data-role="header" style="background:#069A80" data-position="fixed">
+    <h1>Acerca de <br> mi</h1>    
+  </div>
+  
+  <div data-role="content">
+     <center>
+      <img src="img/ejemploMi.png" class="imagenAcerca" alt="">
+      </center>
+      <label for="">Nombre:</label>
+      <h3>Juan Jose Garate Moran.</h3>
+      <label for="">Carrera:</label>
+      <h3>Ingenieria en Licenciatura en Sistemas de Informacion.</h3>
+      <label for="">Materia:</label>
+      <h3>Desarrollo de Aplicaciones para Comercio Elecrónico </h3>
+      
+          <h4 class="text-center">Donacion:</h4>
+  </div>
+<div data-role="footer" data-position="fixed">
+    <div data-role="navbar">      
+    	<ul>
+        	<li><a href="#" data-role="button" 	data-rel="back" 	data-icon="arrow-l" style="background:#069A80">Atras</a></li>
+            
+            <li><a href="#home" data-role="button" 	style="background:#069A80"	data-icon="home">Inicio</a></li>
+            
+            <li><a href="#info" data-rel="dialog" data-role="button" 	style="background:#069A80"	data-icon="info">Info</a></li>
+            
+            <li><a href="#" data-role="button" data-icon="arrow-r" style="background:#069A80">Siguiente</a></li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+<!--Pagina Info -->
+<div data-role="page" id="info">
+  <div data-role="header">
+    <h1>Informacion del Servicio</h1>
+  </div>
+  <div data-role="content">
+      <center>
+             Aplicación desarrollada mediante PhoneGap para Proyecto Final<br>
+              Juan Jose Garate Moran - Mayo 2018.
+      </center>
+       <a href="#" data-rel="back" data-role="button">Cerrar</a>
+  </div>
+</div>
+
+<!-- Fin  -->
+
+<script src="js/main.js"></script>
+</body>
+</html>
