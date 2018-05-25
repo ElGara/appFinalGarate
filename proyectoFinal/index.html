@@ -29,22 +29,19 @@
       <div data-role="collapsible">
         <h3>Comida</h3>
          <ul data-role="listview" data-filter="true" id="lista_Comida" data-inset="true" data-split-icon="edit" >
-            <li><a href="#">Página</a><a href="#">Predet.</a></li>
-      	 <li><a href="#">Ejmplo.</a><a href="#">Predet.</a></li>
+         
    	    </ul>
       </div>
       <div data-role="collapsible" data-collapsed="true">
         <h3>Automoviles</h3>
-        <ul data-role="listview" data-filter="true" id="lista_Automoviles" data-inset="true" data-split-icon="edit" >
-            <li><a href="#">Página</a><a href="#">Predet.</a></li>
-      	 <li><a href="#">Ejmplo.</a><a href="#">Predet.</a></li>
+        <ul data-role="listview" data-filter="true" id="lista_Automotris" data-inset="true" data-split-icon="edit" >
+        
    	    </ul>
       </div>
       <div data-role="collapsible" data-collapsed="true">
         <h3>Moda</h3>
         <ul data-role="listview" data-filter="true" id="lista_Moda" data-inset="true" data-split-icon="edit" >
-            <li><a href="#">Página</a><a href="#">Predet.</a></li>
-      	 <li><a href="#">Ejmplo.</a><a href="#">Predet.</a></li>
+        
    	    </ul>
       </div>
     </div>
@@ -77,22 +74,22 @@
    <input type="text" id="nombre" placeholder="Nombre de Servico">
    <label for="imagen">Selecciona Imagen:</label>
    <input type="file" id="imagen">
-   <input type="text" id="telefono" placeholder="Telefono">
-   <input type="text" id="mail" placeholder="E-Mail">
+   <input type="number" id="telefono" placeholder="Telefono">
+   <input type="mail" id="mail" placeholder="E-Mail">
    <input type="text" id="domicilio" placeholder="Domicilio">
    <label for="categoria">Selecciona Una Categoria:
    </label>
    <select id="categoria">
        <option value="Comida">Comida</option>
-       <option value="Auto">Automotris</option>
-       <option value="Bellesa">Bellesa</option>
+       <option value="Automotris">Automotris</option>
+       <option value="Moda">Moda</option>
    </select>
    <label for="Nota">Escribe una nota:</label>
    <textarea name="" id="Nota" cols="30" rows="10" placeholder="Nota...">
        
    </textarea>
    <div id="alerta"></div>
-   <a href="#" data-role="button" class="azul" id="registro">Registrar</a>
+   <a href="#" data-role="button"  class="azul" id="b_guardar">Registrar</a>
     <a href="#home" data-role="button" class="rojo"> Cancelar</a>
   </div>
   <script src="js/main.js"></script>
@@ -171,7 +168,7 @@
    <textarea name="" id="NewNota" cols="30" rows="10" placeholder="Nota...">
        
    </textarea>
-   <a href="#" data-role="button" class="azul" id="registro">Actualizar</a>
+   <a href="#" data-role="button" id="" class="azul" id="registro">Actualizar</a>
    <a href="#" data-role="button" class="rojo">Aliminar</a>
     <a href="#home" data-role="button" class="verde"> Cancelar</a>
   </div>

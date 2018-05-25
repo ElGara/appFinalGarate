@@ -302,7 +302,7 @@ function queryDBInsertForm(tx){
 //Home
 function newFormSuccess(tx, results) {
 	var cat = $("#cajaCategorias").find("input:checked").val();
-	var lista = $("#lista_" + cat + " ul")
+	var lista = $("#lista_" + results.categoria);
 	
 	
 	var obj = $('<li id="li_'+results.insertId+'"><a href="#infoSer" data-uid='+results.insertId+' class="linkDetalles"><div class="interior_lista"><img src="'+ $.imageUR +'" class="img_peq"/><span>' + $("#ti_nombre").val() + " " + $("#ti_apellidos").val()+ '</span></div></a><a href="#edicionServicio"  data-theme="a" data-uid='+results.insertId+'  class="linkForm">Predet.</a></li>');
